@@ -1,5 +1,4 @@
-﻿@using Slimsy.Extensions
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem<ContentModels.ImageLink>>
+﻿@inherits UmbracoViewPage<BlockGridItem<ContentModels.ImageLink>>
 
 @{
     if (Model?.Content?.Image == null || Model?.Content?.Link == null) return;

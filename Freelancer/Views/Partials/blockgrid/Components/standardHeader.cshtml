@@ -1,5 +1,4 @@
-﻿@inherits UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem<ContentModels.StandardHeader>>
-
+﻿@inherits UmbracoViewPage<BlockGridItem<ContentModels.StandardHeader>>
 
 <header class="masthead bg-primary text-white text-center">
     <div class="container d-flex align-items-center flex-column">
@@ -8,7 +7,6 @@
             <!-- Masthead Avatar Image-->
             <img class="masthead-avatar mb-5" src="@Model.Content.Image.GetCropUrl(240)" alt="@Model.Content.Image.GetAltText()" />
         }
-
 
         <!-- Masthead Heading-->
         <h1 class="masthead-heading text-uppercase mb-0">@Model.Content.Title</h1>

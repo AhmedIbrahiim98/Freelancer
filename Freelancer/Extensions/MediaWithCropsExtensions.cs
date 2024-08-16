@@ -1,6 +1,4 @@
-﻿using Umbraco.Cms.Core.Models;
-
-namespace Freelancer.Extensions;
+﻿namespace Freelancer.Extensions;
 
 public static class MediaWithCropsExtensions
 {
@@ -8,8 +6,6 @@ public static class MediaWithCropsExtensions
     {
         var altText = mediaItem.Value<string>(altTextAlias);
 
-        if(string.IsNullOrWhiteSpace(altText)) return string.Empty;
-
-        return altText;
+        return string.IsNullOrWhiteSpace(altText) ? string.Empty : altText;
     }
 }

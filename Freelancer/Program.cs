@@ -1,3 +1,5 @@
+using Freelancer.Configuration;
+
 using Slimsy.DependencyInjection;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -9,6 +11,9 @@ builder.CreateUmbracoBuilder()
     .AddComposers()
     .AddSlimsy()
     .Build();
+
+builder.Services.Configure<FreelancerConfig>(
+    builder.Configuration.GetSection(FreelancerConfig.SectionName));
 
 WebApplication app = builder.Build();
 
@@ -26,7 +31,6 @@ app.UseUmbraco()
         u.UseBackOfficeEndpoints();
         u.UseWebsiteEndpoints();
     });
-
 
 
 await app.RunAsync();
